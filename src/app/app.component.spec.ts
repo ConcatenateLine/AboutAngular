@@ -1,29 +1,34 @@
-import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { render } from '@testing-library/angular';
+import { PokemonApiService } from './features/pokemon/services/pokemonApi.service';
 
 describe('AppComponent', () => {
+  const pokemonServiceMock = { getFormattedPokemonList: () => [] };
+
+  let component: AppComponent;
+  let compiled: HTMLElement;
+
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [AppComponent],
-    }).compileComponents();
-  });
+    const { fixture } = await render(AppComponent, {
+      providers: [{ provide: PokemonApiService, useValue: pokemonServiceMock }],
+    });
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
-
-  it(`should have the 'CursoGentlemanAngular' title`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('CursoGentlemanAngular');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
+    compiled = fixture.nativeElement;
     fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, CursoGentlemanAngular');
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+  // Test if PokemonForm is rendered
+  it('should render pokemon form', () => {
+    expect(compiled.querySelector('app-pokemon-form')).toBeTruthy();
+  });
+
+  // Test template content
+  it('should render title in a h1 tag', () => {
+    expect(compiled.querySelector('h1')?.textContent).toContain('Pokemon List');
   });
 });

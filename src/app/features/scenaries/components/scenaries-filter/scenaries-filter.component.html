@@ -1,0 +1,15 @@
+<div class="example-container">
+  <mat-form-field>
+    <mat-label>Enter your search</mat-label>
+    <input
+      matInput
+      placeholder="Search"
+      [formControl]="filter"
+      (blur)="updateErrorMessage()"
+      required
+    />
+    @if (filter.invalid) {
+    <mat-error>{{ errorMessage() }}</mat-error>
+    }
+  </mat-form-field>
+</div>

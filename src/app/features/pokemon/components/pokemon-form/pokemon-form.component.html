@@ -1,0 +1,11 @@
+<p>pokemon-form works!</p>
+
+<button (click)="addItem()">Add Item</button>
+
+@for (formGroup of form.controls.items.controls; track formGroup.controls.id.value) {
+<div>
+    <app-pokemon-form-child [formGroup]="formGroup" />
+</div>
+}
+
+<p>Total value: {{ totalValue() }}</p>

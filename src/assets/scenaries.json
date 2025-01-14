@@ -1,0 +1,84 @@
+{
+  "battle_scenarios": [
+    {
+      "type": "Random Battles",
+      "description": "Both you and your opponent get randomly generated teams with procedurally generated sets for each Pokémon. The goal is to KO all six of your opponent's Pokémon to win.",
+      "probability_of_benefit": {
+        "type": "Normal",
+        "value": 0.1
+      }
+    },
+    {
+      "type": "In-Game Battles",
+      "description": "These are battles you encounter while progressing through the main storyline of the Pokémon games, such as Gym Battles, Elite Four, and Champion battles.",
+      "probability_of_benefit": {
+        "type": "Fighting",
+        "value": 0.2
+      }
+    },
+    {
+      "type": "Competitive Battles",
+      "description": "These battles follow specific rules and formats, such as those used in official tournaments and leagues. They often involve custom teams and strategies.",
+      "probability_of_benefit": {
+        "type": "Psychic",
+        "value": 0.15
+      }
+    },
+    {
+      "type": "Battle Royale",
+      "description": "A large-scale battle where multiple players (usually 4 or more) fight simultaneously until only one Pokémon remains standing.",
+      "probability_of_benefit": {
+        "type": "Dark",
+        "value": 0.18
+      }
+    },
+    {
+      "type": "Double Battles",
+      "description": "Battles where each player uses two Pokémon at the same time. This requires different strategies and team compositions compared to single battles.",
+      "probability_of_benefit": {
+        "type": "Fairy",
+        "value": 0.12
+      }
+    },
+    {
+      "type": "Triple Battles",
+      "description": "Similar to double battles, but with three Pokémon on each side.",
+      "probability_of_benefit": {
+        "type": "Dragon",
+        "value": 0.13
+      }
+    },
+    {
+      "type": "Rotation Battles",
+      "description": "Each player has a team of three Pokémon, and they must rotate their Pokémon in and out of battle after every turn.",
+      "probability_of_benefit": {
+        "type": "Electric",
+        "value": 0.14
+      }
+    },
+    {
+      "type": "Sky Battles",
+      "description": "Battles that take place in the air, where only Flying-type Pokémon and those with the ability Levitate can participate.",
+      "probability_of_benefit": {
+        "type": "Flying",
+        "value": 0.2
+      }
+    },
+    {
+      "type": "Insect Battles",
+      "description": "Battles where only Bug-type Pokémon are allowed.",
+      "probability_of_benefit": {
+        "type": "Bug",
+        "value": 0.25
+      }
+    },
+    {
+      "type": "Monotype Battles",
+      "description": "Battles where each player uses a team of Pokémon from the same type (e.g., all Fire-type Pokémon).",
+      "probability_of_benefit": {
+        "type": "Fire",
+        "value": 0.16
+      }
+    }
+  ]
+}
